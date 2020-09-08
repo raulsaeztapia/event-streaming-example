@@ -1,4 +1,4 @@
-scalaVersion := "2.13.1"
+//scalaVersion := "2.13.1"
 name := "streaming-example"
 version := "1.0"
 

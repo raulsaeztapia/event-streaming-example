@@ -33,7 +33,6 @@ object Main extends App with DatabaseMigration {
   import session.profile.api._
 
   MessageQueue.createQueue(connectionProvider, queueName, queueDeclaration, bufferSize)
-    .take(bufferSize)
     .map({ x => read[CustomerCreated](x.bytes.utf8String) })
     .log("Received message", x ⇒ println(x))
     .runWith(
